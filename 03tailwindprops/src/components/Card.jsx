@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card(props) {
+function Card({ name = "Sam", post = "Developer" }) {
   return (
     // <div>
     //   <img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705795200&semt=sph"></img>
@@ -30,8 +30,8 @@ function Card(props) {
           </p>
         </blockquote>
         <figcaption className="font-medium">
-          <div className="text-sky-500 dark:text-sky-400">{props.name}</div>
-          <div className="text-slate-700 dark:text-slate-500">{props.post}</div>
+          <div className="text-sky-500 dark:text-sky-400">{name}</div>
+          <div className="text-slate-700 dark:text-slate-500">{post}</div>
         </figcaption>
       </div>
     </figure>
