@@ -15,8 +15,17 @@ function App() {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-    if (numberAllowed) str += "0123456789";
-    if (charAllowed) str += "!@#$%^&*()_+";
+    // Include at least one number if numberAllowed is true
+    if (numberAllowed) {
+      str += "0123456789";
+      pass += "0123456789".charAt(Math.floor(Math.random() * 10));
+    }
+
+    // Include at least one special character if charAllowed is true
+    if (charAllowed) {
+      str += "!@#$%^&*()_+";
+      pass += "!@#$%^&*()_+".charAt(Math.floor(Math.random() * 13));
+    }
 
     for (let i = 0; i < length; i++) {
       const char = Math.floor(Math.random() * str.length);
